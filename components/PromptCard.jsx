@@ -62,7 +62,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             width={12}
             height={12}
           />
-       </div>
+        </div>
       </div>
 
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
@@ -92,3 +92,5 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     </div>
   );
 };
+
+export default PromptCard;
