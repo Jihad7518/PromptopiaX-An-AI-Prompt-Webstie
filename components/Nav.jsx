@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -18,7 +17,8 @@ const Nav = () => {
       setProviders(res);
     })();
   }, []);
- return (
+
+  return (
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
@@ -52,7 +52,7 @@ const Nav = () => {
                 alt='profile'
               />
             </Link>
-         </div>
+          </div>
         ) : (
           <>
             {providers &&
@@ -84,6 +84,7 @@ const Nav = () => {
               alt='profile'
               onClick={() => setToggleDropdown(!toggleDropdown)}
             />
+
             {toggleDropdown && (
               <div className='dropdown'>
                 <Link
@@ -115,3 +116,24 @@ const Nav = () => {
           </div>
         ) : (
           <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type='button'
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className='black_btn'
+                >
+                  Sign in
+                </button>
+              ))}
+          </>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Nav;
