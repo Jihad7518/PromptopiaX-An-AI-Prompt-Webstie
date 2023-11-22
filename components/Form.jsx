@@ -27,3 +27,40 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             className='form_textarea '
           />
         </label>
+
+        <label>
+          <span className='font-satoshi font-semibold text-base text-gray-700'>
+            Field of Prompt{" "}
+            <span className='font-normal'>
+              (#product, #webdevelopment, #idea, etc.)
+            </span>
+          </span>
+          <input
+            value={post.tag}
+            onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            type='text'
+            placeholder='#Tag'
+            required
+            className='form_input'
+          />
+        </label>
+
+        <div className='flex-end mx-3 mb-5 gap-4'>
+          <Link href='/' className='text-gray-500 text-sm'>
+            Cancel
+          </Link>
+
+          <button
+            type='submit'
+            disabled={submitting}
+            className='px-5 py-1.5 text-sm bg-blue-900 rounded-full text-white'
+          >
+            {submitting ? `${type}ing...` : type}
+          </button>
+        </div>
+      </form>
+    </section>
+  );
+};
+
+export default Form;
