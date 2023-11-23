@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -37,3 +36,16 @@ const CreatePrompt = () => {
       setIsSubmitting(false);
     }
   };
+
+  return (
+    <Form
+      type='Create'
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={createPrompt}
+    />
+  );
+};
+
+export default CreatePrompt;
