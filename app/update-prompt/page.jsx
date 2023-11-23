@@ -26,6 +26,7 @@ const UpdatePrompt = () => {
 
     if (promptId) getPromptDetails();
   }, [promptId]);
+
   const updatePrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -50,3 +51,16 @@ const UpdatePrompt = () => {
       setIsSubmitting(false);
     }
   };
+
+  return (
+    <Form
+      type='Edit'
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={updatePrompt}
+    />
+  );
+};
+
+export default UpdatePrompt;
